@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dungeon Mouse</title>
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+</head>
+<body>
+    <img src="img/background.png" id="background">
+    <header>
+        <img src="img/level-1.png" id="nivel">
+        <h1>
+            <div class="tiempo">Tiempo:</div>
+            <div class="tiempo" id="Segundos">50</div>
+        </h1>
+    </header>
+    <table border="1" cellspacing="0" id="table">
+        <tr>
+            <td class="camino" id="11" onclick="mover(this.id)">
+                <img src="img/player.png" id="jugador" onclick="seleccionarRaton(this.id)">
+            </td>
+            <td class="camino" id="21" onclick="mover(this.id)"></td>
+            <td class="camino" id="31" onclick="mover(this.id)"></td>
+            <td class="camino" id="41" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="81" onclick="mover(this.id)"></td>
+            <td class="camino" id="91" onclick="mover(this.id), perderNivel1()">
+                <img src="img/mousetrap.png">
+            </td>
+            <td class="camino" id="101" onclick="mover(this.id)"></td>
+            <td class="camino" id="111" onclick="mover(this.id)"></td>
+            <td class="camino" id="121" onclick="mover(this.id)"></td>
+            <td class="camino" id="131" onclick="mover(this.id)"></td>
+            <td class="camino" id="141" onclick="mover(this.id)"></td>
+            <td class="camino" id="151" onclick="mover(this.id)"></td>
+            <td class="camino" id="161" onclick="mover(this.id)"></td>
+            <td class="camino" id="171" onclick="mover(this.id)"></td>
+        </tr>
+        <tr>
+            <td class="camino" id="12" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="42" onclick="mover(this.id)"></td>
+            <td class="camino" id="52" onclick="mover(this.id)"></td>
+            <td class="camino" id="62" onclick="mover(this.id)"></td>
+            <td class="camino" id="72" onclick="mover(this.id)"></td>
+            <td class="camino" id="82" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="172" onclick="mover(this.id)"></td>
+        </tr>
+        <tr>
+            <td class="camino" id="13" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="63" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="83" onclick="mover(this.id)"></td>
+            <td class="camino" id="93" onclick="mover(this.id)"></td>
+            <td class="camino" id="103" onclick="mover(this.id)"></td>
+            <td class="camino" id="113" onclick="mover(this.id)"></td>
+            <td class="camino" id="123" onclick="mover(this.id)"></td>
+            <td class="camino" id="133" onclick="mover(this.id), perderNivel1()">
+                <img src="img/mousetrap.png">
+            </td>
+            <td class="camino" id="143" onclick="mover(this.id)"></td>
+            <td class="camino" id="153" onclick="mover(this.id)"></td>
+            <td class="camino" id="163" onclick="mover(this.id)"></td>
+            <td class="camino" id="173" onclick="mover(this.id), ganarNivel1()">
+                <img src="img/cheese.png">
+            </td>
+        </tr>
+        <tr>
+            <td class="camino" id="14" onclick="mover(this.id)"></td>
+            <td class="camino" id="24" onclick="mover(this.id)"></td>
+            <td class="camino" id="34" onclick="mover(this.id)"></td>
+            <td class="camino" id="44" onclick="mover(this.id)"></td>
+            <td class="camino" id="54" onclick="mover(this.id)"></td>
+            <td class="camino" id="64" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="104" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="144" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="174" onclick="mover(this.id)"></td>
+        </tr>
+        <tr>
+            <td class="camino" id="15" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="45" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="65" onclick="mover(this.id)"></td>
+            <td class="camino" id="75" onclick="mover(this.id)"></td>
+            <td class="camino" id="85" onclick="mover(this.id), perderNivel1()">
+                <img src="img/mousetrap.png">
+            </td>
+            <td class="camino" id="95" onclick="mover(this.id)"></td>
+            <td class="camino" id="105" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="145" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="175" onclick="mover(this.id)"></td>
+        </tr>
+        <tr>
+            <td class="camino" id="16" onclick="mover(this.id), perderNivel1()">
+                <img src="img/mousetrap.png">
+            </td>
+            <td class="camino" id="26" onclick="mover(this.id)"></td>
+            <td class="camino" id="36" onclick="mover(this.id)"></td>
+            <td class="camino" id="46" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="76" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="96" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="146" onclick="mover(this.id)"></td>
+            <td class="camino" id="156" onclick="mover(this.id)"></td>
+            <td class="camino" id="166" onclick="mover(this.id)"></td>
+            <td class="camino" id="176" onclick="mover(this.id)"></td>
+        </tr>
+        <tr>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="37" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="77" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="97" onclick="mover(this.id)"></td>
+            <td class="camino" id="107" onclick="mover(this.id)"></td>
+            <td class="camino" id="117" onclick="mover(this.id)"></td>
+            <td class="camino" id="127" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="167" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+        </tr>
+        <tr>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="38" onclick="mover(this.id)"></td>
+            <td class="camino" id="48" onclick="mover(this.id)"></td>
+            <td class="camino" id="58" onclick="mover(this.id)"></td>
+            <td class="camino" id="68" onclick="mover(this.id)"></td>
+            <td class="camino" id="78" onclick="mover(this.id)"></td>
+            <td class="camino" id="88" onclick="mover(this.id)"></td>
+            <td class="camino" id="98" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+            <td class="camino" id="128" onclick="mover(this.id)"></td>
+            <td class="camino" id="138" onclick="mover(this.id)"></td>
+            <td class="camino" id="148" onclick="mover(this.id)"></td>
+            <td class="camino" id="158" onclick="mover(this.id)"></td>
+            <td class="camino" id="168" onclick="mover(this.id)"></td>
+            <td class="fondo"><img src="img/road.png"></td>
+        </tr>
+    </table>
+    <div id="efectos"></div>
+    <div id="sonido"><div>
+   
+<script src="js/main.js"></script>
+<script>
+    //Tiempo para completar este nivel:
+    var segundos = 50;
+</script>
+
+
+</html>
